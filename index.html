@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Guessing Game - jQuery</title>
 
+    <!-- Bootstrap links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -20,7 +20,11 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!-- jQuery link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Confetti script -->
+    <script src="assets/javascript/confetti.js"></script>
     <script src="assets/javascript/game.js"></script>
 
 </head>
@@ -28,74 +32,69 @@
 <body>
 
     <div class="container">
-
-
+        
         <div class="row">
             <div class="col" id="header">
                 <h1 class="text-center">Crystal Collector!</h1>
             </div>
         </div>
 
-
-
         <div class="row">
-            <div class="col" id="new-game">
-                <h5 class="btn text-center float-right">New Game</h5>
+            <div class="col d-inline-flex p-2 bd-highlight" id="instructions">
+                <p>How to Play: You will be given a winning number at the start of each round.  Each crystal holds a hidden number and resets every round.  Click on a crystal to add it's hidden number to your score.  If you go over, you lose!  Match your score to the winning number!  </p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col d-flex justify-content-center" id="computer-score"></div>
+            <div class="col d-flex justify-content-center" id="winning-number"></div>
         </div>
-
+        
         <div class="row">
-                <div class="col-3">
-                    <img src="assets/images/green.jpg"
-                    class="img-fluid"
-                    id="crystal-green">
-                </div>
-                <div class="col-3" id="crystal-orange">
-                    <img src="assets/images/orange.jpg"
-                    class="img-fluid">
-                </div>
-                <div class="col-3" id="crystal-purple">
-                    <img src="assets/images/purple.jpg"
-                    class="img-fluid">
-                </div>
-                <div class="col-3" id="crystal-red">
-                    <img src="assets/images/red.jpg"
-                    class="img-fluid">
-                </div>
+            <div class="col-3">
+                <img src="assets/images/green.jpg"
+                class="img-fluid"
+                id="crystal-green">
             </div>
-
+            <div class="col-3" id="crystal-orange">
+                <img src="assets/images/orange.jpg"
+                class="img-fluid">
+            </div>
+            <div class="col-3" id="crystal-purple">
+                <img src="assets/images/purple.jpg"
+                class="img-fluid">
+            </div>
+            <div class="col-3" id="crystal-red">
+                <img src="assets/images/red.jpg"
+                class="img-fluid">
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col text-center" id="user-score">0</div>
         </div>
-
-
+        
         <div class="row">
             <div class="col d-flex justify-content-end" id="wins">Wins: 0</div>
             <div class="col d-flex justify-content-start" id="losses">Losses: 0</div>
         </div>
-
-
-
+        
         <div class="row">
-            <div class="col d-inline-flex p-2 bd-highlight" id="instructions">
-                <p>How to Play: Lorem ipsum instructions go here click this click that lorem ipsum instructions. Lorem
-                    ipsum instructions go here click this click that lorem ipsum instructions. Lorem ipsum instructions
-                    go here click this click that lorem ipsum instructions. Lorem ipsum instructions go here click this
-                    click that lorem ipsum orem ipsum instructions. Lorem ipsum
-                    instructions go here click this click that lorem ipsum instructions.</p>
-            </div>
+            <div class="col d-flex justify-content-center" id="next-round"></div>
         </div>
 
-
-
-
+        <div class="row">
+            <div class="col d-flex justify-content-center" id="new-game">
+                <h5 class="btn btn-primary">New Game</h5>
+            </div>
+        </div>
+        
+        <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <p>Created by <a href="https://github.com/novakjason">Jason Novak</a></p>
+                </div>
+            </div>
     </div>
-
-
+    
 </body>
 
 </html>
