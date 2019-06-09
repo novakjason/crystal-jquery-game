@@ -46,7 +46,6 @@ var randomNumber = function (min, max) {
 
 //    Variable to hold winning number which should be between 19 - 120.
 winningNumber = randomNumber(19, 120);
-console.log(winningNumber);
 
 
 //     Crystals are given hidden values between 1 - 12.
@@ -54,39 +53,42 @@ crystal.green.value = randomNumber(1, 12);
 crystal.orange.value = randomNumber(1, 12);
 crystal.purple.value = randomNumber(1, 12);
 crystal.red.value = randomNumber(1, 12);
-console.log("Green: " + crystal.green.value);
-console.log("Orange: " + crystal.orange.value);
-console.log("Purple: " + crystal.purple.value);
-console.log("Red: " + crystal.red.value);
 
 
 //    When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
 function crystalGreen() {
-  console.log("GREEN CLICKED!");
-  userScore = userScore + crystal.green.value;
-  $("#user-score").html('<div>' + userScore + '</div>');
-  checkScore();
+  if (userScore < winningNumber) {
+    userScore = userScore + crystal.green.value;
+    $("#user-score").html('<div>' + userScore + '</div>');
+    checkScore();
+  }
 };
 
+//  Repeat stuff repeat stuff repeat stuff....let's fix this.
 function crystalOrange() {
-  console.log("ORANGE CLICKED!");
-  userScore = userScore + crystal.orange.value;
-  $("#user-score").html('<div>' + userScore + '</div>');
-  checkScore();
+  if (userScore < winningNumber) {
+    userScore = userScore + crystal.orange.value;
+    $("#user-score").html('<div>' + userScore + '</div>');
+    checkScore();
+  }
 };
 
+//  Repeat stuff repeat stuff repeat stuff....let's fix this.
 function crystalPurple() {
-  console.log("PURPLE CLICKED!");
-  userScore = userScore + crystal.purple.value;
-  $("#user-score").html('<div>' + userScore + '</div>');
-  checkScore();
+  if (userScore < winningNumber) {
+    userScore = userScore + crystal.purple.value;
+    $("#user-score").html('<div>' + userScore + '</div>');
+    checkScore();
+  }
 };
 
+//  Repeat stuff repeat stuff repeat stuff....let's fix this.
 function crystalRed() {
-  console.log("RED CLICKED!");
-  userScore = userScore + crystal.red.value;
-  $("#user-score").html('<div>' + userScore + '</div>');
-  checkScore();
+  if (userScore < winningNumber) {
+    userScore = userScore + crystal.red.value;
+    $("#user-score").html('<div>' + userScore + '</div>');
+    checkScore();
+  }
 };
 
 
@@ -96,7 +98,7 @@ function nextRound() {
   winningNumber = randomNumber(19, 120);
   $("#winning-number").html('<div>' + winningNumber + '</div>');
   userScore = 0;
-  $("#user-score").text("0");
+  $("#user-score").html('<div>0</div>');
   console.log(winningNumber);
   //  Value of each crystal resets.
   crystal.green.value = randomNumber(1, 12);
@@ -108,7 +110,7 @@ function nextRound() {
   console.log("Purple: " + crystal.purple.value);
   console.log("Red: " + crystal.red.value);
   //  Next round button is cleared from DOM.
-  $("#next-round").empty();
+  $("#next-round").html('<div>');
   confetti.stop();
 
 }
@@ -121,7 +123,7 @@ function checkScore() {
     wins++;
     $("#wins").html('<div>Wins: ' + wins + '</div>');
     //  Adds a button to DOM to start next round
-    $("#next-round").html('<div class="btn btn-primary d-inline-flex justify-content-center">You win! Click here to start next round.</div>');
+    $("#next-round").html('<div class="btn btn-success text-white">You win! Click here to start next round.</div>');
   }
   //    * The player loses if their score goes above the random number.
   else if (userScore > winningNumber) {
@@ -129,14 +131,13 @@ function checkScore() {
     losses++;
     $("#losses").html('<div>Losses: ' + losses + '</div>');
     //  Adds a button to DOM to start next round.
-    $("#next-round").html('<div class="btn btn-primary d-inline-flex justify-content-center">Sorry you lose! Click here to start next round.</div>');
+    $("#next-round").html('<div class="btn btn-danger text-white" id="next-round">Sorry you lose! Click here to start next round.</div>');
   }
 }
 
 
 //    * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 function newGame() {
-  console.log("NEW GAME CLICKED!");
   nextRound();
   wins = 0;
   $("#wins").html('<div>Wins: ' + wins + '</div>');

@@ -32,69 +32,87 @@
 <body>
 
     <div class="container">
-        
-        <div class="row">
-            <div class="col" id="header">
-                <h1 class="text-center">Crystal Collector!</h1>
+
+        <div class="row mt-5">
+            <div class="col">
+                <div class="h1 text-center">Crystal Collector!</div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col d-inline-flex p-2 bd-highlight" id="instructions">
-                <p>How to Play: You will be given a winning number at the start of each round.  Each crystal holds a hidden number and resets every round.  Click on a crystal to add it's hidden number to your score.  If you go over, you lose!  Match your score to the winning number!  </p>
+        <div class="row p-3 mb-5">
+            <div class="col d-inline-flex bd-highlight" id="instructions">
+                <div class="p">How to Play: You will be given a winning number at the start of each round. Each crystal
+                    holds a
+                    hidden number and resets every round. Click on a crystal to add it's hidden number to your score. If
+                    you go over, you lose! Match your score to the winning number!</div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col d-flex justify-content-center" id="winning-number"></div>
-        </div>
-        
-        <div class="row">
-            <div class="col-3">
-                <img src="assets/images/green.jpg"
-                class="img-fluid"
-                id="crystal-green">
-            </div>
-            <div class="col-3" id="crystal-orange">
-                <img src="assets/images/orange.jpg"
-                class="img-fluid">
-            </div>
-            <div class="col-3" id="crystal-purple">
-                <img src="assets/images/purple.jpg"
-                class="img-fluid">
-            </div>
-            <div class="col-3" id="crystal-red">
-                <img src="assets/images/red.jpg"
-                class="img-fluid">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col text-center" id="user-score">0</div>
-        </div>
-        
-        <div class="row">
-            <div class="col d-flex justify-content-end" id="wins">Wins: 0</div>
-            <div class="col d-flex justify-content-start" id="losses">Losses: 0</div>
-        </div>
-        
-        <div class="row">
-            <div class="col d-flex justify-content-center" id="next-round"></div>
-        </div>
-
-        <div class="row">
-            <div class="col d-flex justify-content-center" id="new-game">
-                <h5 class="btn btn-primary">New Game</h5>
-            </div>
-        </div>
-        
-        <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <p>Created by <a href="https://github.com/novakjason">Jason Novak</a></p>
+        <div class="row my-3">
+            <div class="col d-flex justify-content-center">
+                <div class="btn btn-light">
+                    <div id="winning-number"></div>
                 </div>
             </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col-3 my-3">
+                <img src="assets/images/green.jpg" class="img-fluid" id="crystal-green">
+            </div>
+            <div class="col-3 my-3" id="crystal-orange">
+                <img src="assets/images/orange.jpg" class="img-fluid">
+            </div>
+            <div class="col-3 my-3" id="crystal-purple">
+                <img src="assets/images/purple.jpg" class="img-fluid">
+            </div>
+            <div class="col-3 my-3" id="crystal-red">
+                <img src="assets/images/red.jpg" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col d-flex justify-content-center">
+                <div class="btn btn-light">
+                    <div id="user-score"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col d-flex justify-content-end">
+                <div class="btn btn-light">
+                    <div id="wins"></div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-start">
+                <div class="btn btn-light">
+                    <div id="losses"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col d-inline-flex justify-content-center">
+                <div id="next-round"></div>
+            </div>
+        </div>
+
+        <div class="row my-3">
+            <div class="col py-3 d-flex justify-content-center">
+                <div class="btn btn-light">
+                    <div id="new-game">New Game</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <p>Created by <a href="https://github.com/novakjason" target="blank">Jason Novak</a></p>
+            </div>
+        </div>
     </div>
-    
+
 </body>
 
 </html>
